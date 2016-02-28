@@ -1,2 +1,16 @@
 /* Page-specific styling */
-
+div.inspireMe input {
+    background:url(/images/brain-and-head.png) no-repeat;
+    cursor:pointer;
+    width: 128px;
+    height: 128px;
+    border: 0;
+}
+div.rewardMe input {
+    background:url(/images/gamepad.png) no-repeat;
+    cursor:pointer;
+    margin-top: 40px;
+    width: 128px;
+    height: 128px;
+    border: 0;
+}
