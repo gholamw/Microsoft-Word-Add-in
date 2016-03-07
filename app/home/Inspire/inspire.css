@@ -1,1 +1,55 @@
 /* Page-specific styling */
+  .wone {
+    position: relative;
+    background: url(/images/exploding.png);
+    width: 128px;
+    height: 128px;
+    margin-right: 40px;
+  }
+  .wordone {
+    position: absolute;
+    width: 60px;
+    size: 8;
+    padding-top: 40px;
+    padding-left: 35px;
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    color: yellow;
+  }
+  .wtwo {
+    position: relative;
+    background: url(/images/exploding.png);
+    width: 128px;
+    height: 128px;
+    margin-left: 150px
+  }
+  .wordtwo {
+    position: absolute;
+    width: 60px;
+    size: 8;
+    padding-top: 40px;
+    padding-left: 35px;
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    color: yellow;
+  }
+  .wthree {
+    position: relative;
+    background: url(/images/exploding.png);
+    width: 128px;
+    height: 128px;
+    margin-right: 150px
+  }
+  .wordthree {
+    position: absolute;
+    width: 60px;
+    size: 8;
+    padding-top: 40px;
+    padding-left: 35px;
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    color: yellow;
+  }

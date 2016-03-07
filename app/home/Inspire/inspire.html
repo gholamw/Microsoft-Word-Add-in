@@ -1,46 +1,48 @@
-<html>
-
-<head>
-
-<title>Json Data</title>
-
-<script type="text/javascript" src="/Users/SamGholam/Desktop/cheerio-example/animals.json"></script>
+<html><head>
+    
+    <title>Json Data</title>
+    <link href="../../App.css" rel="stylesheet" type="text/css" />
+     <script src="../../App.js"></script>
+ 
+    <link href="inspire.css" rel="stylesheet" type="text/css" />
+    <script src="inspire.js"></script>
+    <script type="text/javascript" src="/Users/SamGholam/Desktop/cheerio-example/animals.json"></script>
 <script type="text/javascript" src="inspire.js"></script>
 </head>
 
 
 
 <body>
-
-<h1>JSon Debugging Page</h1>
-
-<p>
-
-
-
-</p>
-
-
-<button onclick="getRandomWords()">Get some random words</button>
-
-
-<ul>
-
-<li id = "word1"></li>
-<li id = "word2"></li>
-<li id = "word3"></li>
-
-
-</ul>
-
-
-
-
-
-
-
-
-
+<div id="content-header">
+    <div class="padding">
+        <div align="center">
+            <h1>Inspire Me</h1>
+        </div>
+    </div>
+  </div>
+<div id="content-main">
+    <div class="padding">
+      <div align="center">  
+        <button onclick="getRandomWords()">Get some random words</button>
+            <div class="wone">
+            <div class="wordone">
+                <p id = "word1"></p>
+            </div>
+            </div>
+            <div class="wtwo">
+            <div class="wordtwo">
+                <p id = "word2"></p>
+            </div>
+            </div>
+            <div class="wthree">
+            <div class="wordthree">
+                <p id = "word3"></p>
+            </div>
+            </div>
+            <a href="/app/home/home.html">Go Back</a>
+      </div>
+    </div>
+  </div>
 </body>
 
 
