@@ -52,3 +52,9 @@
         top: 5px;
         cursor: pointer;
     }
+
+#fixedIcon {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
