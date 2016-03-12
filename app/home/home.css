@@ -1,15 +1,15 @@
 /* Page-specific styling */
 div.inspireMe input {
-    background:url(../images/brain-and-headgreen.png) no-repeat;
+    background:url(../images/PuzzleSmall.png) no-repeat;
     cursor:pointer;
     width: 128px;
     height: 128px;
     border: 0;
 }
 div.rewardMe input {
-    background:url(../images/gamepad.png) no-repeat;
+    background:url(../images/ControllerSmall.png) no-repeat;
     cursor:pointer;
-    margin-top: 40px;
+    margin-top: 80px;
     width: 128px;
     height: 128px;
     border: 0;

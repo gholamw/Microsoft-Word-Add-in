@@ -7,7 +7,10 @@
     <link href="inspire.css" rel="stylesheet" type="text/css" />
     <script src="inspire.js"></script>
     <script type="text/javascript" src="/Users/SamGholam/Desktop/cheerio-example/animals.json"></script>
-<script type="text/javascript" src="inspire.js"></script>
+    <link href="../../App.css" rel="stylesheet" type="text/css" />
+    
+
+    <script type="text/javascript" src="inspire.js"></script>
 </head>
 
 
@@ -15,16 +18,19 @@
 <body>
 
 <div id="content-header">
+  <div id="content-header">
     <div class="padding">
         <div align="center">
-            <h1>Inspire Me</h1>
+            <img src="../../../images/inspireMeLogoDropShadow.png" width="177" height="50" border="0">
         </div>
     </div>
   </div>
 <div id="content-main">
     <div class="padding">
       <div align="center">  
-        <button onclick="getRandomWords()">Get some random words</button>
+        <button id = "randdom" onclick="getRandomWords()">Get some random words</button>
+        <img src="../../../images/Blocks.png">
+        
             <div class="wone">
             <div class="wordone">
                 <p id = "word1"></p>
@@ -40,11 +46,14 @@
                 <p id = "word3"></p>
             </div>
             </div>
-            <a href="/app/home/home.html">Go Back</a>
       </div>
     </div>
   </div>
-
+  <div>
+    <a href="/app/home/home.html" id="fixedIcon">
+      <img src="../../../images/TuningIcon.png">
+    </a>
+  </div>
 </body>
 
 
