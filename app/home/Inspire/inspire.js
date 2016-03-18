@@ -11,8 +11,13 @@ var animals = ["cat", "dog", "bird", "penguin", "camel" , "sheep", "cow" , "Abys
 getRandomWords();
 
 
-  function getRandomWords(){
-  	
+
+
+        
+        
+        
+        
+   function getRandomWords(){       	
 
   	//var randomInt = parseInt((Math.random() * 50), 10);
   	 //var random Math.random() * (max - min) + min;
@@ -40,5 +45,4 @@ getRandomWords();
 word1el.innerHTML = animals[random1];
 word2el.innerHTML = animals[random2];
 word3el.innerHTML = animals[random3];
-
-  }//getRandomWords
+   }
