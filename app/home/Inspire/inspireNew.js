@@ -57,7 +57,7 @@ function getAllSlices(file) {
 function onGetAllSlicesSucceeded(docxData) {
     $.ajax({
         type: "POST",
-        url: "https://inspiremetcdapi.azurewebsites.net",
+        url: "http://httpbin.org/post",
         data: encodeBase64(docxData),
         contentType: "application/json; charset=utf-8",
     }).done(function (data) {
