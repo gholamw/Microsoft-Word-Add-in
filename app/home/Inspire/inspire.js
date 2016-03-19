@@ -95,7 +95,7 @@ function sendSlice(slice, state) {
             }
         }
 
-        request.open("POST", "http://inspiremetcdapi.azurewebsites.net");
+        request.open("POST", "https://inspiremetcdapi.azurewebsites.net");
         request.setRequestHeader("Slice-Number", slice.index);
 
         // Send the file as the body of an HTTP POST 
