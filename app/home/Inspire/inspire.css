@@ -36,4 +36,8 @@
     font-weight: bold;
     font-size: small;
     color: black;
+  } 
+
+  .statusBar {
+    color: black;
   }
