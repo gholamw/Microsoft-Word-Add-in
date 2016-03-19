@@ -1,48 +1,119 @@
-//var json = require('/Users/SamGholam/Desktop/cheerio-example/animals.json'); //(with path)
-//var request = require('request');
-//var txtFile = require('file');
-//var json = /Users/SamGholam/Desktop/cheerio-example/animals.json;
-//console.log("THE WORD IS" , json);
+// The initialize function is required for all add-ins.
+Office.initialize = function (reason) {
+    // Checks for the DOM to load using the jQuery ready function.
+    $(document).ready(function () {
+      sendFile();
+      updateStatus("Ready to send file.");
+    });
+}
 
-var word1 = 3;
-var word2 = 4;
-var word3 = 23; 
-var animals = ["cat", "dog", "bird", "penguin", "camel" , "sheep", "cow" , "Abyssinian","Adelie Penguin","Affenpinscher","Afghan Hound","African Bush Elephant","African Civet","African Clawed Frog","African Forest Elephant","African Palm Civet","African Penguin","African Tree Toad","African Wild Dog","Ainu Dog","Airedale Terrier ","Akbash","Akita","Alaskan Malamute","Albatross","Aldabra Giant Tortoise","Alligator","Alpine Dachsbracke","American Bulldog","American Cocker Spaniel","American Coonhound","American Eskimo Dog","American Foxhound","American Pit Bull Terrier","American Staffordshire Terrier","American Water Spaniel","Anatolian Shepherd Dog","Angelfish","Ant","Anteater","Antelope","Appenzeller Dog","Arctic Fox","Arctic Hare","Arctic Wolf","Armadillo","Asian Elephant","Asian Giant Hornet","Asian Palm Civet","Asiatic Black Bear","Australian Cattle Dog","Australian Kelpie Dog","Australian Mist","Australian Shepherd","Australian Terrier","Avocet","Axolotl","Aye Aye ","Baboon","Bactrian Camel","Badger","Balinese","Banded Palm Civet","Bandicoot","Barb","Barn Owl","Barnacle","Barracuda","Basenji Dog","Basking Shark","Basset Hound","Bat","Bavarian Mountain Hound","Beagle","Bear","Bearded Collie","Bearded Dragon","Beaver","Bedlington Terrier","Beetle","Bengal Tiger","Bernese Mountain Dog","Bichon Frise","Binturong","Bird","Birds Of Paradise","Birman","Bison","Black Bear","Black Rhinoceros","Black Russian Terrier","Black Widow Spider","Bloodhound","Blue Lacy Dog","Blue Whale","Bluetick Coonhound","Bobcat","Bolognese Dog","Bombay","Bongo","Bonobo","Booby","Border Collie","Border Terrier","Bornean Orang-utan","Borneo Elephant","Boston Terrier","Bottle Nosed Dolphin","Boxer Dog","Boykin Spaniel","Brazilian Terrier","Brown Bear","Budgerigar","Buffalo","Bull Mastiff","Bull Shark","Bull Terrier","Bulldog","Bullfrog","Bumble Bee","Burmese","Burrowing Frog","Butterfly","Butterfly Fish","Caiman","Caiman Lizard","Cairn Terrier","Camel","Canaan Dog","Capybara","Caracal","Carolina Dog","Cassowary","Cat","Caterpillar","Catfish","Cavalier King Charles Spaniel","Centipede","Cesky Fousek","Chameleon","Chamois","Cheetah"];
-getRandomWords();
-
-
-
-
-        
-        
-        
-        
-   function getRandomWords(){       	
-
-  	//var randomInt = parseInt((Math.random() * 50), 10);
-  	 //var random Math.random() * (max - min) + min;
-  	 var random1 = Math.floor(Math.random() * ((animals.length -2)+1) + 2);
-  	 var random2 = Math.floor(Math.random() * ((animals.length -2)+1) + 2);
-  	 var random3 = Math.floor(Math.random() * ((animals.length -2)+1) + 2);
+// Create a function for writing to the status div. 
+function updateStatus(message) {
+    var statusInfo = document.getElementById("status");
+    statusInfo.innerHTML += message + "<br/>";
+}
 
 
+// Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
+function sendFile() {
+
+    Office.context.document.getFileAsync("compressed",
+        { sliceSize: 100000 },
+        function (result) {
+
+            if (result.status == Office.AsyncResultStatus.Succeeded) {
+
+                // Get the File object from the result.
+                var myFile = result.value;
+                var state = {
+                    file: myFile,
+                    counter: 0,
+                    sliceCount: myFile.sliceCount
+                };
+
+                updateStatus("Getting file of " + myFile.size +
+                    " bytes");
+
+                getSlice(state);
+            }
+            else {
+                updateStatus(result.status);
+            }
+    });
+}
 
 
-//for(var i = 0; i<json.length; i++){
+// Get a slice from the file and then call sendSlice.
+function getSlice(state) {
 
+    state.file.getSliceAsync(state.counter, function (result) {
+        if (result.status == Office.AsyncResultStatus.Succeeded) {
 
-//}//for
+            updateStatus("Sending piece " + (state.counter + 1) +
+                " of " + state.sliceCount);
 
+            sendSlice(result.value, state);
+        }
+        else {
+            updateStatus(result.status);
+        }
+    });
+}
 
-// var mydata = JSON.parse(json[5]);
+function sendSlice(slice, state) {
+    var data = slice.data;
 
- var word1el = document.getElementById("word1");
- var word2el = document.getElementById("word2");
- var word3el = document.getElementById("word3");
-//console.log(mydata[0
+    // If the slice contains data, create an HTTP request.
+    if (data) {
 
-//word1el.innerHTML = mydata;
-word1el.innerHTML = animals[random1];
-word2el.innerHTML = animals[random2];
-word3el.innerHTML = animals[random3];
-   }
+        // Encode the slice data, a byte array, as a Base64 string.
+        // NOTE: The implementation of myEncodeBase64(input) function isn't 
+        // included with this example. For information about Base64 encoding with
+        // JavaScript, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding.
+        var fileData = myEncodeBase64(data);
+
+        // Create a new HTTP request. You need to send the request 
+        // to a webpage that can receive a post.
+        var request = new XMLHttpRequest();
+
+        // Create a handler function to update the status 
+        // when the request has been sent.
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+
+                updateStatus("Sent " + slice.size + " bytes.");
+                state.counter++;
+
+                if (state.counter < state.sliceCount) {
+                    getSlice(state);
+                }
+                else {
+                    closeFile(state);
+                }
+            }
+        }
+
+        request.open("POST", "http://inspiremetcdapi.azurewebsites.net");
+        request.setRequestHeader("Slice-Number", slice.index);
+
+        // Send the file as the body of an HTTP POST 
+        // request to the web server.
+        request.send(fileData);
+    }
+}
+
+function closeFile(state) {
+
+    // Close the file when you're done with it.
+    state.file.closeAsync(function (result) {
+
+        // If the result returns as a success, the
+        // file has been successfully closed.
+        if (result.status == "succeeded") {
+            updateStatus("File closed.");
+        }
+        else {
+            updateStatus("File couldn't be closed.");
+        }
+    });
+}
