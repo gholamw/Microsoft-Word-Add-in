@@ -22,7 +22,7 @@ function sendFile() {
         function (result) {
 
             if (result.status == Office.AsyncResultStatus.Succeeded) {
-
+                console.log ( 'AsyncResultStatus.Succeeded' );
                 // Get the File object from the result.
                 var myFile = result.value;
                 var state = {
@@ -37,6 +37,7 @@ function sendFile() {
                 getSlice(state);
             }
             else {
+                console.log ( 'AsyncResultStatus.Failed' );
                 updateStatus(result.status);
             }
     });
