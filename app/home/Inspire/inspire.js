@@ -73,9 +73,9 @@ function sendSlice(slice, state) {
         // JavaScript, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding.
         //var fileData = myEncodeBase64(data);
         //Added the correct method for encoding to Base64
-        var fileData window.btoa(data);
+        var fileData = window.btoa(data);
         // Create a new HTTP request. You need to send the request 
-        // to a webpage that can receive a post.
+        // to a webpage that can receive a post
         var request = new XMLHttpRequest();
 
         // Create a handler function to update the status 
