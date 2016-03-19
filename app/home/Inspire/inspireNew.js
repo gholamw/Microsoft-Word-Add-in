@@ -57,7 +57,7 @@ function getAllSlices(file) {
 function onGetAllSlicesSucceeded(docxData) {
     $.ajax({
         type: "POST",
-        url: "http://httpbin.org/post",
+        url: "https://httpbin.org/post",
         data: encodeBase64(docxData),
         contentType: "application/json; charset=utf-8",
     }).done(function (data) {
