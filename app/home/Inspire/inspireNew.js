@@ -1,6 +1,7 @@
 Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
+        
       getFileAsyncInternal();
     });
 }
@@ -57,8 +58,8 @@ function getAllSlices(file) {
 function onGetAllSlicesSucceeded(docxData) {
     $.ajax({
         type: "POST",
-        url: "https://httpbin.org/ip",
-        data: encodeBase64(docxData),
+        url: "https://inspiremetcdapi.azurewebsites.net/api",
+        data: "q:" + encodeBase64(docxData),
         contentType: "application/json; charset=utf-8",
     }).done(function (data) {
         document.getElementById("documentXmlContent").textContent = data;
