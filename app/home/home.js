@@ -4,13 +4,13 @@ var TotalSeconds;
 function CreateTimer(TimerID, Time) {
     Timer = document.getElementById(TimerID);
     TotalSeconds = Time;
-    UpdateTimer()
+    UpdateTimer();
     window.setTimeout("Tick()", 1000);
 }
 
 function Tick() {
     TotalSeconds -= 1;
-    UpdateTimer()
+    UpdateTimer();
     window.setTimeout("Tick()", 1000);
 }
 
