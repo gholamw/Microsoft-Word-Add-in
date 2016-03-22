@@ -21,22 +21,3 @@ function UpdateTimer() {
     var TimeStr = LeadingZero(Minutes) + ":" + LeadingZero(Seconds)
     Timer.innerHTML = TimeStr;
 }
-
-
-function LeadingZero(Time) {
-    return (Time < 10) ? "0" + Time : + Time;
-}
-
-(function(){
-  'use strict';
-
-  // The initialize function must be run each time a new page is loaded
-  Office.initialize = function(reason){
-    jQuery(document).ready(function(){
-      app.initialize();
-
-      jQuery('#get-data-from-selection').click(getDataFromSelection);
-    });
-  };
-
-})();
