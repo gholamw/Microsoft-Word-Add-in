@@ -21,3 +21,9 @@ function UpdateTimer() {
     var TimeStr = LeadingZero(Minutes) + ":" + LeadingZero(Seconds)
     Timer.innerHTML = TimeStr;
 }
+
+function LeadingZero(Time) {
+
+return (Time < 10) ? "0" + Time : + Time;
+
+}

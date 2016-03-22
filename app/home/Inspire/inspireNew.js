@@ -83,8 +83,8 @@ function drawText(array){
                 canvas.width = 200;
                 canvas.height = 200;
                 
-                ctx.font = "10px Comic Sans MS";
-                ctx.fillStyle = "red";
+                ctx.font = "10px Proxima Nova";
+                ctx.strokeStyle = "black";
                 ctx.textAlign = "center";
                 ctx.fillText(words[0], canvas.width/2-32, canvas.height/2+5);
                 ctx.fillText(words[1], canvas.width/2+32, canvas.height/2+5);
