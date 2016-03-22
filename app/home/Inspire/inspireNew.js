@@ -61,6 +61,7 @@ function getAllSlices(file) {
 // Upload the docx file to server after obtaining all the bits from host.
 function onGetAllSlicesSucceeded(docxData) {
     console.log("Making request to python server");
+    console.log(docxData);
     $.ajax({
         type: "POST",
         url: "https://inspiremetcdapi.azurewebsites.net/api",
