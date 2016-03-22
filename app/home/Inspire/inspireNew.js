@@ -2,11 +2,7 @@ Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready function.
     var words = new Array("Einstein","Physics","German","Nobel Prize","Relativity","Theory","Atoms","Albert","Energy","Quantum","Science","Current","Particle","E=MC^2");
     $(document).ready(function () {
-<<<<<<< HEAD
-        
-=======
       drawText(array);
->>>>>>> origin/Back-end-with-categories
       getFileAsyncInternal();
     });
 }
