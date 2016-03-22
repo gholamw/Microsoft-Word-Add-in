@@ -4,6 +4,7 @@ Office.initialize = function (reason) {
     $(document).ready(function () {
       //drawText(words);
       getFileAsyncInternal();
+      console.log("Check 1");
     });
 }
 
@@ -20,8 +21,10 @@ function getFileAsyncInternal() {
     Office.context.document.getFileAsync("compressed", { sliceSize: 10240 }, function (asyncResult) {
         if (asyncResult.status == Office.AsyncResultStatus.Failed) {
             document.getElementById("status").textContent = JSON.stringify(asyncResult);
+            console.log("AsyncResult Failed");
         }
         else {
+            console.log("AsyncResult Passed");
             getAllSlices(asyncResult.value);
         }
     });
@@ -57,6 +60,7 @@ function getAllSlices(file) {
 
 // Upload the docx file to server after obtaining all the bits from host.
 function onGetAllSlicesSucceeded(docxData) {
+    console.log("Making request to python server");
     $.ajax({
         type: "POST",
         url: "https://inspiremetcdapi.azurewebsites.net/api",
