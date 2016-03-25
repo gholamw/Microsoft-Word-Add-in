@@ -18,7 +18,7 @@ function encodeBase64(docData) {
 
 // Call getFileAsync() to start the retrieving file process.
 function getFileAsyncInternal() {
-    Office.context.document.getFileAsync("compressed", { sliceSize: 10240 }, function (asyncResult) {
+    Office.context.document.getFileAsync("text", { sliceSize: 10240 }, function (asyncResult) {
         if (asyncResult.status == Office.AsyncResultStatus.Failed) {
             //document.getElementById("status").textContent = JSON.stringify(asyncResult);
             console.log("AsyncResult Failed");
