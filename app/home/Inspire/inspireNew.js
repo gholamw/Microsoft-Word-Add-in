@@ -4,7 +4,7 @@ Office.initialize = function (reason) {
     $(document).ready(function () {
       //drawText(words);
       getFileAsyncInternal();
-      console.log("Check 1");
+      console.log("Office API ready");
     });
 }
 
@@ -20,7 +20,7 @@ function encodeBase64(docData) {
 function getFileAsyncInternal() {
     Office.context.document.getFileAsync("compressed", { sliceSize: 10240 }, function (asyncResult) {
         if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-            document.getElementById("status").textContent = JSON.stringify(asyncResult);
+            //document.getElementById("status").textContent = JSON.stringify(asyncResult);
             console.log("AsyncResult Failed");
         }
         else {
@@ -50,7 +50,7 @@ function getAllSlices(file) {
             }
             else {
                 file.closeAsync();
-                document.getElementById("status").textContent = JSON.stringify(asyncResult);
+                //document.getElementById("status").textContent = JSON.stringify(asyncResult);
 
             }
         });
