@@ -69,7 +69,6 @@ function onGetAllSlicesSucceeded(docxData) {
         data: "q:" + encodeBase64(docxData),
         contentType: "application/json; charset=utf-8",
     }).done(function (data) {
-        document.getElementById("documentXmlContent").textContent = data;
         console.log(data);
     }).fail(function (jqXHR, textStatus) {
     });
