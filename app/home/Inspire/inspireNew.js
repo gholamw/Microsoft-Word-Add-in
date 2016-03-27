@@ -65,8 +65,7 @@ function onGetAllSlicesSucceeded(docxData) {
     $.ajax({
         type: "POST",
         url: "https://inspiremetcdapi.azurewebsites.net/api",
-        //Access-Control-Allow-Origin: "https://inspiremetcdapi.azurewebsites.net",
-        data: "q:" + encodeBase64(docxData),
+        q: docxData,
         contentType: "application/json; charset=utf-8",
     }).done(function (data) {
         console.log(data);
