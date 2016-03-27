@@ -62,11 +62,12 @@ function getAllSlices(file) {
 function onGetAllSlicesSucceeded(docxData) {
     console.log("Making request to python server");
     console.log(docxData);
+    console.log(docxData[0]);
+    var stringToSend = docxData[0];
     $.ajax({
         type: "POST",
         url: "https://inspiremetcdapi.azurewebsites.net/api",
-        q: docxData,
-        contentType: "application/json; charset=utf-8",
+        data: {q: stringToSend},
     }).done(function (data) {
         console.log(data);
     }).fail(function (jqXHR, textStatus) {
