@@ -1,5 +1,5 @@
 window.onload = function() {
-   startCountDown(300, 1000, myFunction);
+   startCountDown(10, 1000, myFunction);
 }
 
 function startCountDown(i, p, f) {

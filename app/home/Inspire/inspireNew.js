@@ -76,6 +76,7 @@ function onGetAllSlicesSucceeded(docxData) {
     }).done(function (data) {
         console.log(data);
         //console.log(parseJson(data));
+        parseResponse(data);
     }).fail(function (jqXHR, textStatus) {
     });
 }
@@ -111,8 +112,8 @@ function drawText(array){
 //    var links = [];
 
 function parseJson(jsonData){
-    data = jsonData;
-    //data = '{"query": "wrote the origin of the species", "words": [["Charles Darwin Biography", "http://kids.britannica.com/comptons/article-9273921/Charles-Darwin"], ["Introduction to evolution and natural selection", "https://www.khanacademy.org/science/biology/her/evolution-and-natural-selection/v/introduction-to-evolution-and-natural-selection"]], "mClass": "charles darwin", "alternativeSpellings": "7 Wonders Of The World", "prob": 2.046264554869276e-09}';
+    //data = jsonData;
+    data = '{"query": "wrote the origin of the species", "words": [["Charles Darwin Biography", "http://kids.britannica.com/comptons/article-9273921/Charles-Darwin"], ["Introduction to evolution and natural selection", "https://www.khanacademy.org/science/biology/her/evolution-and-natural-selection/v/introduction-to-evolution-and-natural-selection"]], "mClass": "charles darwin", "alternativeSpellings": "7 Wonders Of The World", "prob": 2.046264554869276e-09}';
 
     var parsed = JSON.parse(data);
     var arr = [];
@@ -145,4 +146,18 @@ for(var p =0; p<voc.length; p++){
     console.log(links[p]);
     }
 
+}
+
+function parseResponse(data){
+    var db = data;
+    var links = [];
+    var words = [];
+
+    for(var X = 0; X < db.words.length;X++)
+    {
+        links.push(db.words[X][2]);
+        words.push(db.words[X][0]);
+    }
+    console.log(links);
+    console.log(words);
 }
