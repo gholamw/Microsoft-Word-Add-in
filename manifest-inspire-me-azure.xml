@@ -10,7 +10,7 @@
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://inspiremeapp.azurewebsites.net/app/home/home.html"/>
+    <SourceLocation DefaultValue="https://inspiremeapp.azurewebsites.net/"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
