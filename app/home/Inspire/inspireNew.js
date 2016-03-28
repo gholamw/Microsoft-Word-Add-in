@@ -91,18 +91,21 @@ function drawText(words){
                 ctx.font = "10px Proxima Nova";
                 ctx.strokeStyle = "black";
                 ctx.textAlign = "center";
-                ctx.fillText(words[0], canvas.width/2-32, canvas.height/2+5);
-                ctx.fillText(words[1], canvas.width/2+32, canvas.height/2+5);
-                ctx.fillText(words[2], canvas.width/2-32, canvas.height/2+60);
-                ctx.fillText(words[3], canvas.width/2+32, canvas.height/2+60);
-                ctx.fillText(words[4], canvas.width/2-32, canvas.height/2-55);
-                ctx.fillText(words[5], canvas.width/2+32, canvas.height/2-55);
-                ctx.fillText(words[6], canvas.width/2, canvas.height/2-85);
-                ctx.fillText(words[7], canvas.width/2, canvas.height/2+90);
-                ctx.fillText(words[8], canvas.width/2, canvas.height/2-25);
-                ctx.fillText(words[9], canvas.width/2-65, canvas.height/2-25);
-                ctx.fillText(words[10], canvas.width/2+65, canvas.height/2-25);
-                ctx.fillText(words[11], canvas.width/2, canvas.height/2+32);
+                //ctx.fillText(words[0], canvas.width/2-32, canvas.height/2+5);
+                //ctx.fillText(words[1], canvas.width/2+32, canvas.height/2+5);
+                //ctx.fillText(words[2], canvas.width/2-32, canvas.height/2+60);
+                //ctx.fillText(words[3], canvas.width/2+32, canvas.height/2+60);
+                //ctx.fillText(words[4], canvas.width/2-32, canvas.height/2-55);
+                //ctx.fillText(words[5], canvas.width/2+32, canvas.height/2-55);
+                //ctx.fillText(words[6], canvas.width/2, canvas.height/2-85);
+                //ctx.fillText(words[7], canvas.width/2, canvas.height/2+90);
+                //ctx.fillText(words[8], canvas.width/2, canvas.height/2-25);
+                //ctx.fillText(words[9], canvas.width/2-65, canvas.height/2-25);
+                //ctx.fillText(words[10], canvas.width/2+65, canvas.height/2-25);
+                //ctx.fillText(words[11], canvas.width/2, canvas.height/2+32);
+                ctx.fillText(words[0], canvas.width/2-16, canvas.height/2+5);
+                ctx.fillText(words[1], canvas.width/2-16, canvas.height/2+60);
+                ctx.fillText(words[2], canvas.width/2-16, canvas.height/2-55);
 }
 
 function parseResponse(data){
