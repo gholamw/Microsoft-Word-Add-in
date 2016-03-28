@@ -75,13 +75,12 @@ function onGetAllSlicesSucceeded(docxData) {
         data: {q: stringToSend},
     }).done(function (data) {
         console.log(data);
-        //console.log(parseJson(data));
         parseResponse(data);
     }).fail(function (jqXHR, textStatus) {
     });
 }
 
-function drawText(array){
+function drawText(words){
                 
                 var canvas = document.getElementById("myCanvas");
                 var ctx = canvas.getContext("2d");
@@ -104,8 +103,6 @@ function drawText(array){
                 ctx.fillText(words[9], canvas.width/2-65, canvas.height/2-25);
                 ctx.fillText(words[10], canvas.width/2+65, canvas.height/2-25);
                 ctx.fillText(words[11], canvas.width/2, canvas.height/2+32);
-                ctx.fillText(words[12], canvas.width/2-65, canvas.height/2+32);
-                ctx.fillText(words[13], canvas.width/2+65, canvas.height/2+32);
 }
 
 //    var voc = [];
@@ -160,4 +157,5 @@ function parseResponse(data){
     }
     console.log(links);
     console.log(words);
+    drawText(words);
 }
