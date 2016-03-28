@@ -105,46 +105,6 @@ function drawText(words){
                 ctx.fillText(words[11], canvas.width/2, canvas.height/2+32);
 }
 
-//    var voc = [];
-//    var links = [];
-
-function parseJson(jsonData){
-    //data = jsonData;
-    data = '{"query": "wrote the origin of the species", "words": [["Charles Darwin Biography", "http://kids.britannica.com/comptons/article-9273921/Charles-Darwin"], ["Introduction to evolution and natural selection", "https://www.khanacademy.org/science/biology/her/evolution-and-natural-selection/v/introduction-to-evolution-and-natural-selection"]], "mClass": "charles darwin", "alternativeSpellings": "7 Wonders Of The World", "prob": 2.046264554869276e-09}';
-
-    var parsed = JSON.parse(data);
-    var arr = [];
-    var category = [];
-    var z = 0;
-    var k =0; 
-    var voc = [];
-    var links = [];
-
-    for(var x in parsed){
-        arr.push(parsed[x]);
-    }
-
-    for(var x = 0; x< arr.length; x++){
-        category[x] = arr[1];
-    }
-
-
-    while(z < parsed.words.length){
-        var temp = arr[1][z][0];
-        var temp1 = arr[1][z][1];
-        voc[z] = temp;
-        links[z] = temp1;
-        z++;
-    }
-
-// For testing 
-for(var p =0; p<voc.length; p++){
-    console.log(voc[p]);
-    console.log(links[p]);
-    }
-
-}
-
 function parseResponse(data){
     var db = data;
     var links = [];
