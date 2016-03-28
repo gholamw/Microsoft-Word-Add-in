@@ -2,7 +2,7 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>bced95cd-d678-47f7-a524-3cb77c415166</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>David Leacy</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Inspire Me"/>
   <Description DefaultValue="[Task pane Add-in description]"/>
