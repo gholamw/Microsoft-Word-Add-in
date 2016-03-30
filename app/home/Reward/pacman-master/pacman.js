@@ -860,6 +860,9 @@ var PACMAN = (function () {
         if (user.getLives() > 0) {
             startLevel();
         }
+        else{
+            document.location.href =  'https://inspiremeapp.azurewebsites.net/home.html';
+        }
     }
 
     function setState(nState) { 
