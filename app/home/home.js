@@ -32,7 +32,7 @@ function startCountDown(i, p, f) {
 }
 
 function myFunction(){
-    document.getElementById("redButton").src="../../images/TuningIcon.png";
+    document.getElementById("redButton").src="../../images/ControllerSmallGreen.png";
     document.getElementById("rewardMe").onclick="return true";
 };
 
