@@ -9,9 +9,12 @@
     position:relative; 
   }
   #list{
-    
+    list-style-type: none;
   }
 
   .statusBar {
     color: black;
+  }
+  .button{
+      background-color: orange;
   }
