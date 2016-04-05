@@ -1,15 +1,10 @@
 /* Page-specific styling */
-  .img{position:absolute;z-index:1;}
-  #words {
-    display:inline-block;
-    width:300px; 
-    height:300px;
-    margin: 0 auto; 
-    background: white; 
-    position:relative; 
-  }
+  
   #list li{
     list-style-type: none;
+  }
+  ul{
+     list-style-type: none; 
   }
 
   .statusBar {
