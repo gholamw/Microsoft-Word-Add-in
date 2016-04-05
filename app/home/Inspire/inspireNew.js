@@ -16,6 +16,8 @@ function encodeBase64(docData) {
     return window.btoa(s);
 }
 
+
+
 // Call getFileAsync() to start the retrieving file process.
 function getFileAsyncInternal() {
     Office.context.document.getFileAsync("text", { sliceSize: 10240 }, function (asyncResult) {
@@ -62,12 +64,20 @@ function utf8_to_b64(str) {
     return window.btoa(escape(encodeURIComponent(str)));
 }
 
+function b64EncodeUnicode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode('0x' + p1);
+    }));
+}
+
+
 // Upload the docx file to server after obtaining all the bits from host.
 function onGetAllSlicesSucceeded(docxData) {
     console.log("Making request to python server");
     console.log(docxData);
     console.log(docxData[0]);
-    var stringToSend = btoa(docxData[0]);
+    //var stringToSend = btoa(docxData[0]);
+    var stringToSend = b64EncodeUnicode(docxData[0]);
     console.log(stringToSend);
     $.ajax({
         type: "POST",
