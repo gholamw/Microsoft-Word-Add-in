@@ -8,7 +8,7 @@
     background: white; 
     position:relative; 
   }
-  #list{
+  #list li{
     list-style-type: none;
   }
 
