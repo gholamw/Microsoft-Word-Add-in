@@ -8,13 +8,14 @@
     background: white; 
     position:relative; 
   }
-  .list{
+  #list{
     list-style-type: none;
   }
 
   .statusBar {
     color: black;
   }
-  #buttonlink{
+  .buttonlink{
       background-color: orange;
+      
   }
