@@ -82,7 +82,7 @@ function onGetAllSlicesSucceeded(docxData) {
 
 function drawText(words,links){
     for( var i = 0; i < words.length;i++) {   
-        document.getElementById("list").innerHTML += '<li><button type="button" onclick="window.open(\'http://google.com\'); >' + words[i] + '</button></li>'
+        document.getElementById("list").innerHTML += '<li><button type="button" onclick="window.open(\'http://google.com\');" >' + words[i] + '</button></li>'
     }
 }
 
