@@ -1,16 +1,18 @@
 /* Page-specific styling */
   
   #list li{
+    list-style: none;
     list-style-type: none;
   }
   ul{
-     list-style-type: none; 
+    list-style: none;
+    list-style-type: none; 
   }
 
   .statusBar {
     color: black;
   }
   .buttonlink{
-      background-color: orange;
+      /*background-color: orange;*/
       
   }
