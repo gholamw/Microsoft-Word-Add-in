@@ -62,11 +62,11 @@ function b64EncodeUnicode(str) {
 // Upload the docx file to server after obtaining all the bits from host.
 function onGetAllSlicesSucceeded(docxData) {
     console.log("Making request to python server");
-    console.log(docxData);
-    console.log(docxData[0]);
+    //console.log(docxData);
+    //console.log(docxData[0]);
     //var stringToSend = btoa(docxData[0]);
     var stringToSend = b64EncodeUnicode(docxData[0]);
-    console.log(stringToSend);
+    //console.log(stringToSend);
     //Request made to server
     $.ajax({
         type: "POST",
