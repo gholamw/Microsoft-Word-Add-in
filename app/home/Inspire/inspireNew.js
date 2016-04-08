@@ -1,3 +1,4 @@
+//Initialise Office.js and begin getting text from wrod document
 Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready function.
     //var words = new Array("Einstein","Physics","German","Nobel Prize","Relativity","Theory","Atoms","Albert","Energy","Quantum","Science","Current","Particle","E=MC^2");
@@ -7,16 +8,6 @@ Office.initialize = function (reason) {
       console.log("Office API ready");
     });
 }
-
-// Usually we encode the data in base64 format before sending it to server.
-function encodeBase64(docData) {
-    var s = "";
-    for (var i = 0; i < docData.length; i++)
-        s += String.fromCharCode(docData[i]);
-    return window.btoa(s);
-}
-
-
 
 // Call getFileAsync() to start the retrieving file process.
 function getFileAsyncInternal() {
@@ -60,10 +51,7 @@ function getAllSlices(file) {
     getSlice();
 }
 
-function utf8_to_b64(str) {
-    return window.btoa(escape(encodeURIComponent(str)));
-}
-
+// Usually we encode the data in base64 format before sending it to server.
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
         return String.fromCharCode('0x' + p1);
@@ -79,6 +67,7 @@ function onGetAllSlicesSucceeded(docxData) {
     //var stringToSend = btoa(docxData[0]);
     var stringToSend = b64EncodeUnicode(docxData[0]);
     console.log(stringToSend);
+    //Request made to server
     $.ajax({
         type: "POST",
         url: "https://inspiremetcdapi.azurewebsites.net/api",
@@ -90,12 +79,14 @@ function onGetAllSlicesSucceeded(docxData) {
     });
 }
 
+//add buttons to <ul> as list elements
 function drawText(words,links){
     for( var i = 0; i < words.length;i++) {   
         document.getElementById("list").innerHTML += '<li><button class="buttonlink"type="button" onclick="window.open(\'https://en.wikipedia.org'+ links[i] + '\');" >' + words[i] + '</button></li>'
     }
 }
 
+//Parses the response from server getting a list of word and a list of corresponding links, then calls the drawText function
 function parseResponse(data){
     var db = data;
     var links = [];
