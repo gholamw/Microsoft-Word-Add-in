@@ -1,7 +1,9 @@
+//On load calls countdown
 window.onload = function() {
    startCountDown(10, 1000, myFunction);
 }
 
+//Begins countdown for timer
 function startCountDown(i, p, f) {
    var pause = p;
    var fn = f;
@@ -31,11 +33,13 @@ function startCountDown(i, p, f) {
    countDownObj.count(i);
 }
 
+//After timer has reached zero, change controller image to green
 function myFunction(){
     document.getElementById("redButton").src="../../images/ControllerSmallGreen.png";
     document.getElementById("rewardMe").onclick="return true";
 };
 
+//Updates timer
 function UpdateTimer(TotalSeconds) {
     var Seconds = TotalSeconds;
     var Minutes = Math.floor(Seconds / 60);
@@ -47,6 +51,7 @@ function UpdateTimer(TotalSeconds) {
     }
 }
 
+//Adds leading zero to single digit times
 function LeadingZero(Time) {
 
 return (Time < 10) ? "0" + Time : + Time;
