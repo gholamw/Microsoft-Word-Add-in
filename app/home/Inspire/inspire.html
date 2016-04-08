@@ -8,23 +8,12 @@
      <script src="../../App.js"></script>
  
     <link href="inspire.css" rel="stylesheet" type="text/css" />
-    <!--<script type="text/javascript" src="/Users/SamGholam/Desktop/cheerio-example/animals.json"></script>-->
     <link href="../../App.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
-    <!--<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">-->
     <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-
-    <!-- To enable offline debugging using a local reference to jQuery.js Office.js, use: -->
-    <!-- <script src="../../bower_components/jquery/jquery.min.js"></script>  -->
-    <!-- <script src="../../bower_components/microsoft.office.js/scripts/Office/1/office.js"></script>  -->
-    <!-- <script src="../../content/fabric.min.css"></script>  -->
-    <!-- <script src="../../content/fabric.components.min.css"></script>  -->
-    <!-- <script src="../../scripts/jquery.fabric.min.js"></script>  -->
     <script src="../../../scripts/MicrosoftAjax.js"></script>    
     
 </head>
-
-
 
 <body>
 
@@ -40,47 +29,12 @@
       <div class="alignDiv">  
         <div id="words">
             
-	
+	    <!-- This is where we place our generated buttons from InspireNew.js--> 	
             <ul id="list"></ul>
-            
-            <!--<script>
-                var words = new Array("Einstein","Physics","German","Nobel Prize","Relativity","Theory","Atoms","Albert","Energy","Quantum","Science","Current","Particle","E=MC^2");
-                var canvas = document.getElementById("myCanvas");
-                var ctx = canvas.getContext("2d");
-                
-                canvas.width = 200;
-                canvas.height = 200;
-                
-                ctx.font = "10px Proxima Nova";
-                ctx.strokeStyle = "black";
-                ctx.textAlign = "center";
-                ctx.strokeText(words[0], canvas.width/2-32, canvas.height/2+5);
-                ctx.strokeText(words[1], canvas.width/2+32, canvas.height/2+5);
-                ctx.strokeText(words[2], canvas.width/2-32, canvas.height/2+60);
-                ctx.strokeText(words[3], canvas.width/2+32, canvas.height/2+60);
-                ctx.strokeText(words[4], canvas.width/2-32, canvas.height/2-55);
-                ctx.strokeText(words[5], canvas.width/2+32, canvas.height/2-55);
-                ctx.strokeText(words[6], canvas.width/2, canvas.height/2-85);
-                ctx.strokeText(words[7], canvas.width/2, canvas.height/2+90);
-                ctx.strokeText(words[8], canvas.width/2, canvas.height/2-25);
-                ctx.strokeText(words[9], canvas.width/2-65, canvas.height/2-25);
-                ctx.strokeText(words[10], canvas.width/2+65, canvas.height/2-25);
-                ctx.strokeText(words[11], canvas.width/2, canvas.height/2+32);
-                ctx.strokeText(words[12], canvas.width/2-65, canvas.height/2+32);
-                ctx.strokeText(words[13], canvas.width/2+65, canvas.height/2+32);
-            </script>
-        -->
+
         </div>
       </div>
     </div>
-        
-    <!--<div id="statusBar"><h2>Status</h2> 
-      <div id="status"></div>
-    </div>
-        <div id="Returneddata"><h2>Status</h2> 
-      <div id="documentXmlContent"> </div>
-    </div>
-    -->
   </div>
   <div>
     <a href="https://inspiremeapp.azurewebsites.net/home.html" id="fixedIcon">
@@ -89,8 +43,4 @@
   </div>
   <script type="text/javascript" src="inspireNew.js"></script>
 </body>
-
-
-
-
 </html>
